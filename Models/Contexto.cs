@@ -7,5 +7,6 @@ namespace WMVCLivros.Models
         public Contexto(DbContextOptions<Contexto> options) : base(options) { }
 
         public DbSet<Autores> Autores { get; set; }
+        public DbSet<Editoras> Editoras { get; set; }
     }
 }
