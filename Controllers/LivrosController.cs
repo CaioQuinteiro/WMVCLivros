@@ -28,6 +28,7 @@ namespace WMVCLivros.Controllers
         // GET: Livros/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+
             if (id == null || _context.Livros == null)
             {
                 return NotFound();
@@ -37,6 +38,7 @@ namespace WMVCLivros.Controllers
                 .Include(l => l.Autores)
                 .Include(l => l.Editoras)
                 .FirstOrDefaultAsync(m => m.Id == id);
+
             if (livros == null)
             {
                 return NotFound();
@@ -48,8 +50,8 @@ namespace WMVCLivros.Controllers
         // GET: Livros/Create
         public IActionResult Create()
         {
-            ViewData["AutoresID"] = new SelectList(_context.Autores, "Id", "Nacionalidade");
-            ViewData["EditoraID"] = new SelectList(_context.Editoras, "Id", "Localizacao");
+            ViewData["AutoresID"] = new SelectList(_context.Autores, "Id", "Nome");
+            ViewData["EditoraID"] = new SelectList(_context.Editoras, "Id", "Nome");
             return View();
         }
 
@@ -66,8 +68,8 @@ namespace WMVCLivros.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["AutoresID"] = new SelectList(_context.Autores, "Id", "Nacionalidade", livros.AutoresID);
-            ViewData["EditoraID"] = new SelectList(_context.Editoras, "Id", "Localizacao", livros.EditoraID);
+            ViewData["AutoresID"] = new SelectList(_context.Autores, "Id", "Nome", livros.AutoresID);
+            ViewData["EditoraID"] = new SelectList(_context.Editoras, "Id", "Nome", livros.EditoraID);
             return View(livros);
         }
 
@@ -84,8 +86,8 @@ namespace WMVCLivros.Controllers
             {
                 return NotFound();
             }
-            ViewData["AutoresID"] = new SelectList(_context.Autores, "Id", "Nacionalidade", livros.AutoresID);
-            ViewData["EditoraID"] = new SelectList(_context.Editoras, "Id", "Localizacao", livros.EditoraID);
+            ViewData["AutoresID"] = new SelectList(_context.Autores, "Id", "Nome", livros.AutoresID);
+            ViewData["EditoraID"] = new SelectList(_context.Editoras, "Id", "Nome", livros.EditoraID);
             return View(livros);
         }
 
@@ -121,8 +123,8 @@ namespace WMVCLivros.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["AutoresID"] = new SelectList(_context.Autores, "Id", "Nacionalidade", livros.AutoresID);
-            ViewData["EditoraID"] = new SelectList(_context.Editoras, "Id", "Localizacao", livros.EditoraID);
+            ViewData["AutoresID"] = new SelectList(_context.Autores, "Id", "Nome", livros.AutoresID);
+            ViewData["EditoraID"] = new SelectList(_context.Editoras, "Id", "Nome", livros.EditoraID);
             return View(livros);
         }
 
@@ -143,6 +145,8 @@ namespace WMVCLivros.Controllers
                 return NotFound();
             }
 
+            ViewData["AutoresID"] = new SelectList(_context.Autores, "Id", "Nome", livros.AutoresID);
+            ViewData["EditoraID"] = new SelectList(_context.Editoras, "Id", "Nome", livros.EditoraID);
             return View(livros);
         }
 
