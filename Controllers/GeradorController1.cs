@@ -47,13 +47,11 @@ namespace WMVCLivros.Controllers
             contexto.Database.ExecuteSqlRaw("DBCC CHECKIDENT('editoras', RESEED, 0)");
             Random randNum = new Random();
 
-            string[] vPais = { "Brasil", "EUA", "Argentina", "Espanha", "Portugal", "Alemanha", "Inglaterra", "França", "Bélgica", "Suiça", };
-
             for (int i = 0; i < 10; i++)
             {
                 Editoras Editoras = new Editoras
                 {
-                    Nome = vNomeFem(i + 1).ToString(),
+                    Nome = "Editora " + (i + 1).ToString(),
                     Localizacao = "País " + randNum.Next(1, 5).ToString(),
                     Fundacao = Convert.ToDateTime("01/01/1940").AddDays(randNum.Next(0, 13000))
             };
