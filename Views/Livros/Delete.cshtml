@@ -39,19 +39,19 @@
             @Html.DisplayNameFor(model => model.Autores)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Autores.Nacionalidade)
+            @Html.DisplayFor(model => model.Autores.Nome)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Editoras)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Editoras.Localizacao)
+            @Html.DisplayFor(model => model.Editoras.Nome)
         </dd>
     </dl>
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="Id" />
         <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Voltar para a lista!</a>
+        <a class="Add" asp-action="Index">Voltar para a lista!</a>
     </form>
 </div>

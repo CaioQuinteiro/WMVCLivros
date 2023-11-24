@@ -37,5 +37,6 @@ namespace WMVCLivros.Models
         public int EditoraID { get; set; }
         [ForeignKey("EditoraID")]
         public required Editoras Editoras { get; set; }
+
     }
 }

@@ -21,10 +21,6 @@ namespace WMVCLivros.Models
         [Display(Name = "Quantidade: ")]
         public int Qtde { get; set; }
 
-        [Required(ErrorMessage = "Campo Valor é obrigatório")]
-        [Display(Name = "Valor: ")]
-        public float Valor { get; set; }
-
         [Display(Name = "Livro: ")]
         public int LivroId { get; set; }
         [ForeignKey("LivroId")]

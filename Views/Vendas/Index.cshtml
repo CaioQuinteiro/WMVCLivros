@@ -1,0 +1,53 @@
+﻿@model IEnumerable<WMVCLivros.Models.Vendas>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a class="Add" asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DataVenda)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Qtde)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Livros)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Clientes)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataVenda)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Qtde)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Livros.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Clientes.Email)
+            </td>
+            <td>
+                    <a class="Add" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a class="Add" asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a class="Add" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

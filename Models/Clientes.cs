@@ -22,7 +22,7 @@ namespace WMVCLivros.Models
         public required string Email { get; set; }
 
         [Required(ErrorMessage = "Campo Celular é obrigatório")]
-        [Display(Name = "Celular: ")]
+        [Display(Name = "Final do Celular(4): ")]
         public int Celular { get; set; }
 
     }

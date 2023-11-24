@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<WMVCLivros.Models.Clientes>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Clientes";
 }
 
 <h1>Clientes</h1>
 
 <p>
-    <a class="Add" asp-action="Create">Adicionar Novo</a>
+    <a class="Add" asp-action="Pesquisa">Pesquisa</a>
 </p>
 <table class="table">
     <thead>
@@ -37,10 +37,9 @@
                 @Html.DisplayFor(modelItem => item.Celular)
             </td>
             <td>
-                    <a class="Add" asp-action="Edit" asp-route-id="@item.Id">Editar</a> 
-                    <a class="Add" asp-action="Details" asp-route-id="@item.Id">Detalhes</a> 
+                    <a class="Add" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                    <a class="Add" asp-action="Details" asp-route-id="@item.Id">Detalhes</a>
                     <a class="Add" asp-action="Delete" asp-route-id="@item.Id">Remover</a>
-                  
             </td>
         </tr>
 }
