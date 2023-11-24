@@ -28,16 +28,14 @@ namespace WMVCLivros.Models
         [Required(ErrorMessage = "Campo é obrigatório")]
         public int AnoDePublicacao { get; set; }
 
-        [Required(ErrorMessage = "Campo Autor(a) é obrigatório")]
+        [Display(Name = "Autor(a): ")]
         public int AutoresID { get; set; }
         [ForeignKey("AutoresID")]
-        [Display(Name = "Autor(a): ")]
         public required Autores Autores { get; set; }
 
-        [Required(ErrorMessage = "Campo Editora é obrigatório")]
+        [Display(Name = "Editora: ")]
         public int EditoraID { get; set; }
         [ForeignKey("EditoraID")]
-        [Display(Name = "Editora: ")]
         public required Editoras Editoras { get; set; }
     }
 }

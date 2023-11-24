@@ -3,8 +3,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WMVCLivros.Models
 {
-    [Table("Usuarios")]
-    public class Usuarios
+    [Table("Clientes")]
+    public class Clientes
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -15,7 +15,15 @@ namespace WMVCLivros.Models
         [Display(Name = "Nome: ")]
         [StringLength(70)]
         public required string Nome { get; set; }
-        
+
+        [Required(ErrorMessage = "Campo Email é obrigatório")]
+        [Display(Name = "Email: ")]
+        [StringLength(100)]
+        public required string Email { get; set; }
+
+        [Required(ErrorMessage = "Campo Celular é obrigatório")]
+        [Display(Name = "Celular: ")]
+        public int Celular { get; set; }
 
     }
 }

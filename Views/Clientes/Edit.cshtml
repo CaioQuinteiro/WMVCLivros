@@ -1,10 +1,10 @@
-﻿@model WMVCLivros.Models.Autores
+﻿@model WMVCLivros.Models.Clientes
 
 @{
     ViewData["Title"] = "Edit";
 }
 
-<h1>Autores</h1>
+<h1>Clientes</h1>
 
 <hr />
 <div class="row">
@@ -18,14 +18,14 @@
                 <span asp-validation-for="Nome" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Data" class="control-label"></label>
-                <input asp-for="Data" class="form-control" />
-                <span asp-validation-for="Data" class="text-danger"></span>
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Nacionalidade" class="control-label"></label>
-                <input asp-for="Nacionalidade" class="form-control" />
-                <span asp-validation-for="Nacionalidade" class="text-danger"></span>
+                <label asp-for="Celular" class="control-label"></label>
+                <input asp-for="Celular" class="form-control" />
+                <span asp-validation-for="Celular" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Salvar" class="btn btn-primary" />
