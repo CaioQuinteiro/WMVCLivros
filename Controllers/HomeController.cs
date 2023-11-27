@@ -15,7 +15,17 @@ namespace WMVCLivros.Controllers
 
         public IActionResult Index()
         {
+            //if(cookie == "VERDADEIRO")
+            //{
+            //    return View();
+            //}
+            //else
+            //{
+            //    return RedirectToAction("Logins", "Login");
+            //}
+
             return View();
+
         }
 
         public IActionResult Privacy()

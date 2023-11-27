@@ -157,9 +157,6 @@ namespace WMVCLivros.Migrations
                     b.Property<int>("Qtde")
                         .HasColumnType("int");
 
-                    b.Property<float>("Valor")
-                        .HasColumnType("real");
-
                     b.HasKey("Id");
 
                     b.HasIndex("ClienteId");
